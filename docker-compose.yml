@@ -9,7 +9,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
-      - "13306:3306"  # เปลี่ยน Host Port เป็น 13306
+      - "13306:3306" # เปลี่ยน Host Port เป็น 13306
 
   backend:
     build:
@@ -18,7 +18,7 @@ services:
     container_name: spring-boot-backend
     restart: always
     ports:
-      - "18080:8080"  # เปลี่ยน Host Port เป็น 18080
+      - "18080:8080" # เปลี่ยน Host Port เป็น 18080
     volumes:
       - ./backend:/app
     depends_on:
@@ -35,7 +35,7 @@ services:
     container_name: vue-frontend
     restart: always
     ports:
-      - "15173:5173"  # เปลี่ยน Host Port เป็น 15173
+      - "15173:5173" # เปลี่ยน Host Port เป็น 15173
     volumes:
       - ./frontend:/app
       - /app/node_modules
@@ -43,3 +43,7 @@ services:
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
     depends_on:
       - backend
+
+networks:
+  472-deploy-g1:
+    driver: bridge
