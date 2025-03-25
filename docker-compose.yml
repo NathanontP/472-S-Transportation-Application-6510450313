@@ -25,8 +25,8 @@ services:
       - ./backend:/app
     depends_on:
       - mysql
-    env_file:
-      - backend/src/main/resources/.env
+    # env_file:
+    #   - backend/src/main/resources/.env
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://my-mysql:3306/transport_application?serverTimezone=Asia/Bangkok
       - SPRING_DATASOURCE_USERNAME=root
