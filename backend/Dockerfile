@@ -5,7 +5,7 @@ FROM openjdk:21-jdk-slim
 WORKDIR /app
 
 # คัดลอกไฟล์โปรเจกต์ทั้งหมดจาก backend ไปยัง container
-COPY . /app
+COPY . .
 
 # แก้ปัญหา CRLF (Windows Line Endings) ในไฟล์ `mvnw`
 RUN sed -i 's/\r$//' mvnw && chmod +x mvnw

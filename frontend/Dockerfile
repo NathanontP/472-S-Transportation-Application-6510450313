@@ -3,8 +3,8 @@ FROM node:20-alpine
 # ตั้งค่า path การทำงานใน container
 WORKDIR /app
 
-# คัดลอกไฟล์โปรเจกต์ทั้งหมดไปยัง container
-COPY . /app
+# คัดลอกไฟล์ package.json และ package-lock.json ไปยัง container
+COPY . .
 
 # ติดตั้ง dependencies
 RUN npm install
