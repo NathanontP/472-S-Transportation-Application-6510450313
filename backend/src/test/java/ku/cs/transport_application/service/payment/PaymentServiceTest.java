@@ -29,12 +29,15 @@ class PaymentServiceTest {
 
     @BeforeEach
     void setUp() {
-        Dotenv dotenv = Dotenv.configure()
-                .directory("src/main/resources") // Location of .env file
-                .load();
+        // โหลด STRIPE_TEST_KEY จาก environment variable แทน .env
+        String stripeTestKey = System.getenv("STRIPE_TEST_KEY");
+        if (stripeTestKey != null) {
+            Stripe.apiKey = stripeTestKey;
+        } else {
+            throw new IllegalStateException("STRIPE_TEST_KEY environment variable not set");
+        }
 
-        Stripe.apiKey = dotenv.get("STRIPE_TEST_KEY");
-
+        // สร้าง Order ตัวอย่าง
         order = new Order();
         UUID uuid = UUID.randomUUID();
         order.setId(uuid);
