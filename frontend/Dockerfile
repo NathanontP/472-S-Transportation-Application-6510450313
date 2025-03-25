@@ -6,6 +6,8 @@ WORKDIR /app
 # คัดลอกไฟล์ package.json และ package-lock.json ไปยัง container
 COPY . .
 
+RUN sed -i 's/\r$//' package.json
+
 # ติดตั้ง dependencies
 RUN npm install
 
