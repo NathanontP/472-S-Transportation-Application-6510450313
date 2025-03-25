@@ -4,13 +4,10 @@ FROM node:20-alpine
 WORKDIR /app
 
 # คัดลอกไฟล์ package.json และ package-lock.json ไปยัง container
-COPY package*.json ./
+COPY . .
 
 # ติดตั้ง dependencies
 RUN npm install
-
-# คัดลอกไฟล์โปรเจกต์ทั้งหมดไปยัง container
-COPY . .
 
 # สร้างแอป Vue.js สำหรับ production
 RUN npm run build
