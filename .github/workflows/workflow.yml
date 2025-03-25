@@ -38,6 +38,7 @@ jobs:
           echo "SPRING_EMAIL_SENDER_HOST=${{ secrets.SPRING_EMAIL_SENDER_HOST }}" >> $GITHUB_ENV
           echo "SPRING_MAIL_USERNAME=${{ secrets.SPRING_MAIL_USERNAME }}" >> $GITHUB_ENV
           echo "SPRING_MAIL_PASSWORD=${{ secrets.SPRING_MAIL_PASSWORD }}" >> $GITHUB_ENV
+          echo "PROFILE=${{ secrets.PROFILE }}" >> $GITHUB_ENV
 
       - name: Run Unit Tests (JUnit)
         run: |
