@@ -7,6 +7,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 .env
+*.env
 # application-secret.properties (safe ใช้ env แล้ว)
 
 ### STS ###
