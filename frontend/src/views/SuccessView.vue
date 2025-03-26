@@ -3,17 +3,18 @@ import Header from '@/components/Header.vue'
 import axios from 'axios'
 import { onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { apiBaseUrl } from '@/main'
 
 const route = useRoute()
 
 const updateOrderStatus = async (orderId: string) => {
     return await axios.post(
-        `http://localhost:8080/orders/order-detail/${orderId}/change-status?status=UNCHECK`
+        `${apiBaseUrl}/orders/order-detail/${orderId}/change-status?status=UNCHECK`
     )
 }
 
 const addHistory = async (orderId: string) => {
-    return await axios.post(`http://localhost:8080/payments`, {
+    return await axios.post(`${apiBaseUrl}/payments`, {
         orderId: orderId,
     })
 }
