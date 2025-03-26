@@ -44,7 +44,13 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(List.of("http://localhost:5173"));
+        configuration.setAllowedOrigins(Arrays.asList(
+            "http://localhost:4173",  // สำหรับ development (localhost)
+            "http://localhost:5173",  // สำหรับ development (localhost)
+            "https://g1-472.jgogo01.in.th" // สำหรับ public domain frontend
+            "http://g1-472.jgogo01.in.th" // สำหรับ public domain frontend
+        ));
+        
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "X-Requested-With"));
         configuration.setExposedHeaders(List.of("Authorization"));
