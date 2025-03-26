@@ -3,15 +3,14 @@ import { ref, onMounted } from 'vue'
 import Header from '@/components/Header.vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
+import { apiBaseUrl } from '@/main'
 
 const route = useRoute()
 const receipt = ref(null)
 
 onMounted(async () => {
     try {
-        const rest = await axios.get(
-            `http://localhost:8080/receipt/${route.params.id}`
-        )
+        const rest = await axios.get(`${apiBaseUrl}/receipt/${route.params.id}`)
         receipt.value = rest.data
     } catch (error) {
         console.error('Error fetching receipt:', error)

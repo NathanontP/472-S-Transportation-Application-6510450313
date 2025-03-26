@@ -42,6 +42,7 @@ import { useRoute, useRouter } from 'vue-router'
 import Header from '@/components/Header.vue'
 import HistoryCard from '@/components/HistoryCard.vue'
 import axios from 'axios'
+import { apiBaseUrl } from '@/main'
 
 interface Props {
     name: string
@@ -56,7 +57,7 @@ const loading = ref(false)
 const getHistories = async () => {
     loading.value = true
     try {
-        const res = await axios.get(`http://localhost:8080/payments`)
+        const res = await axios.get(`${apiBaseUrl}/payments`)
         data.value = res.data
         console.log(data.value)
     } catch (e) {
