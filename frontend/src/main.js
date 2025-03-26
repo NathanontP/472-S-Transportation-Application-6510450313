@@ -5,7 +5,7 @@ import store from './stores/store'
 
 import App from './App.vue'
 import router from './router'
-export const apiBaseUrl = import.meta.env.VITE_API_BASE_URL
+export const apiBaseUrl = "http://10.4.11.244:18080"
 const app = createApp(App)
 
 app.use(store)
