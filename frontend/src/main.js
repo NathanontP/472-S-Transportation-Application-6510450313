@@ -5,7 +5,7 @@ import store from './stores/store'
 
 import App from './App.vue'
 import router from './router'
-export const apiBaseUrl = import.meta.env.VITE_API_BASE_URL
+export const apiBaseUrl = 'https://api-g1-472.jgogo01.in.th'
 const app = createApp(App)
 
 app.use(store)
