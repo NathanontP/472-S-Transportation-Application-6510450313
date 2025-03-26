@@ -21,6 +21,6 @@ export default defineConfig({
     allowedHosts: ['g1-472.jgogo01.in.th'], // ✅ อนุญาตให้เข้าถึงจาก domain นี้
   },
   define: {
-    'process.env.VITE_API_BASE_URL': JSON.stringify(process.env.VITE_API_BASE_URL || )
+    'process.env.VITE_API_BASE_URL': JSON.stringify(process.env.VITE_API_BASE_URL)
   }
 })
