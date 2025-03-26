@@ -47,7 +47,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(Arrays.asList(
             "http://localhost:4173",  // สำหรับ development (localhost)
             "http://localhost:5173",  // สำหรับ development (localhost)
-            "https://g1-472.jgogo01.in.th" // สำหรับ public domain frontend
+            "https://g1-472.jgogo01.in.th", // สำหรับ public domain frontend
             "http://g1-472.jgogo01.in.th" // สำหรับ public domain frontend
         ));
         
