@@ -143,6 +143,8 @@ export default {
                           this.profile.profilePicture
                       }?t=${new Date().getTime()}`
                     : '/default-profile.png'
+                console.log(apiBaseUrl)
+                console.log(this.profilePictureUrl)
             } catch (error) {
                 console.error('Error fetching own profile:', error)
             }
