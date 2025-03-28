@@ -33,7 +33,7 @@
         </div>
         <div class="profile" ref="profileContainer">
             <img
-                :src="`${apiBaseUrl}${profile.profilePicture}`"
+                :src="`${apiBaseUrl}/${profile.profilePicture}`"
                 alt="Profile"
                 class="profile-image"
                 @click="toggleProfileMenu"
