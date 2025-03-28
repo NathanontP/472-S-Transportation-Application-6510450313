@@ -33,7 +33,6 @@
         </div>
         <div class="profile" ref="profileContainer">
             <img
-                <!-- TODO: fix hard fk code here -->
                 :src="`https://api-g1-472.jgogo01.in.th${profile.profilePicture}`"
                 alt="Profile"
                 class="profile-image"
