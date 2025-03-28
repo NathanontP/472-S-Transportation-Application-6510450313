@@ -117,8 +117,7 @@ public class OrderController {
     public ResponseEntity<Resource> viewShipmentDoc(@PathVariable UUID orderId) {
         Resource file = fileService.getShipmentDoc(orderId);
         return ResponseEntity.ok()
-                .header("X-Frame-Options", "ALLOW-FROM http://localhost:5173")
-                .header("Content-Security-Policy", "frame-ancestors 'self' http://localhost:5173")
+                .header("Content-Security-Policy", "frame-ancestors 'self' http://localhost:5173 https://g1-472.jgogo01.in.th")
                 .contentType(MediaType.APPLICATION_PDF)
                 .body(file);
     }
